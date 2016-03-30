@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7FF2D2FA1CAB5A410019E98F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF2D2F91CAB5A410019E98F /* AppDelegate.swift */; };
+		7FF2D2FC1CAB5A410019E98F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF2D2FB1CAB5A410019E98F /* ViewController.swift */; };
+		7FF2D2FF1CAB5A410019E98F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FF2D2FD1CAB5A410019E98F /* Main.storyboard */; };
+		7FF2D3021CAB5A410019E98F /* Simplifi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FF2D3001CAB5A410019E98F /* Simplifi.xcdatamodeld */; };
+		7FF2D3041CAB5A410019E98F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FF2D3031CAB5A410019E98F /* Assets.xcassets */; };
+		7FF2D3071CAB5A410019E98F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FF2D3051CAB5A410019E98F /* LaunchScreen.storyboard */; };
+		7FF2D3121CAB5A410019E98F /* SimplifiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF2D3111CAB5A410019E98F /* SimplifiTests.swift */; };
+		7FF2D31D1CAB5A410019E98F /* SimplifiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF2D31C1CAB5A410019E98F /* SimplifiUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7FF2D30E1CAB5A410019E98F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7FF2D2EE1CAB5A410019E98F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7FF2D2F51CAB5A410019E98F;
+			remoteInfo = Simplifi;
+		};
+		7FF2D3191CAB5A410019E98F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7FF2D2EE1CAB5A410019E98F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7FF2D2F51CAB5A410019E98F;
+			remoteInfo = Simplifi;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7FF2D2F61CAB5A410019E98F /* Simplifi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Simplifi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FF2D2F91CAB5A410019E98F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7FF2D2FB1CAB5A410019E98F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7FF2D2FE1CAB5A410019E98F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7FF2D3011CAB5A410019E98F /* Simplifi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Simplifi.xcdatamodel; sourceTree = "<group>"; };
+		7FF2D3031CAB5A410019E98F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7FF2D3061CAB5A410019E98F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7FF2D3081CAB5A410019E98F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FF2D30D1CAB5A410019E98F /* SimplifiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimplifiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FF2D3111CAB5A410019E98F /* SimplifiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplifiTests.swift; sourceTree = "<group>"; };
+		7FF2D3131CAB5A410019E98F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FF2D3181CAB5A410019E98F /* SimplifiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimplifiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FF2D31C1CAB5A410019E98F /* SimplifiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplifiUITests.swift; sourceTree = "<group>"; };
+		7FF2D31E1CAB5A410019E98F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7FF2D2F31CAB5A410019E98F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FF2D30A1CAB5A410019E98F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FF2D3151CAB5A410019E98F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7FF2D2ED1CAB5A410019E98F = {
+			isa = PBXGroup;
+			children = (
+				7FF2D2F81CAB5A410019E98F /* Simplifi */,
+				7FF2D3101CAB5A410019E98F /* SimplifiTests */,
+				7FF2D31B1CAB5A410019E98F /* SimplifiUITests */,
+				7FF2D2F71CAB5A410019E98F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7FF2D2F71CAB5A410019E98F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7FF2D2F61CAB5A410019E98F /* Simplifi.app */,
+				7FF2D30D1CAB5A410019E98F /* SimplifiTests.xctest */,
+				7FF2D3181CAB5A410019E98F /* SimplifiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7FF2D2F81CAB5A410019E98F /* Simplifi */ = {
+			isa = PBXGroup;
+			children = (
+				7FF2D2F91CAB5A410019E98F /* AppDelegate.swift */,
+				7FF2D2FB1CAB5A410019E98F /* ViewController.swift */,
+				7FF2D2FD1CAB5A410019E98F /* Main.storyboard */,
+				7FF2D3031CAB5A410019E98F /* Assets.xcassets */,
+				7FF2D3051CAB5A410019E98F /* LaunchScreen.storyboard */,
+				7FF2D3081CAB5A410019E98F /* Info.plist */,
+				7FF2D3001CAB5A410019E98F /* Simplifi.xcdatamodeld */,
+			);
+			path = Simplifi;
+			sourceTree = "<group>";
+		};
+		7FF2D3101CAB5A410019E98F /* SimplifiTests */ = {
+			isa = PBXGroup;
+			children = (
+				7FF2D3111CAB5A410019E98F /* SimplifiTests.swift */,
+				7FF2D3131CAB5A410019E98F /* Info.plist */,
+			);
+			path = SimplifiTests;
+			sourceTree = "<group>";
+		};
+		7FF2D31B1CAB5A410019E98F /* SimplifiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7FF2D31C1CAB5A410019E98F /* SimplifiUITests.swift */,
+				7FF2D31E1CAB5A410019E98F /* Info.plist */,
+			);
+			path = SimplifiUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7FF2D2F51CAB5A410019E98F /* Simplifi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FF2D3211CAB5A410019E98F /* Build configuration list for PBXNativeTarget "Simplifi" */;
+			buildPhases = (
+				7FF2D2F21CAB5A410019E98F /* Sources */,
+				7FF2D2F31CAB5A410019E98F /* Frameworks */,
+				7FF2D2F41CAB5A410019E98F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Simplifi;
+			productName = Simplifi;
+			productReference = 7FF2D2F61CAB5A410019E98F /* Simplifi.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7FF2D30C1CAB5A410019E98F /* SimplifiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FF2D3241CAB5A410019E98F /* Build configuration list for PBXNativeTarget "SimplifiTests" */;
+			buildPhases = (
+				7FF2D3091CAB5A410019E98F /* Sources */,
+				7FF2D30A1CAB5A410019E98F /* Frameworks */,
+				7FF2D30B1CAB5A410019E98F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7FF2D30F1CAB5A410019E98F /* PBXTargetDependency */,
+			);
+			name = SimplifiTests;
+			productName = SimplifiTests;
+			productReference = 7FF2D30D1CAB5A410019E98F /* SimplifiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7FF2D3171CAB5A410019E98F /* SimplifiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FF2D3271CAB5A410019E98F /* Build configuration list for PBXNativeTarget "SimplifiUITests" */;
+			buildPhases = (
+				7FF2D3141CAB5A410019E98F /* Sources */,
+				7FF2D3151CAB5A410019E98F /* Frameworks */,
+				7FF2D3161CAB5A410019E98F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7FF2D31A1CAB5A410019E98F /* PBXTargetDependency */,
+			);
+			name = SimplifiUITests;
+			productName = SimplifiUITests;
+			productReference = 7FF2D3181CAB5A410019E98F /* SimplifiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7FF2D2EE1CAB5A410019E98F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Jared;
+				TargetAttributes = {
+					7FF2D2F51CAB5A410019E98F = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					7FF2D30C1CAB5A410019E98F = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 7FF2D2F51CAB5A410019E98F;
+					};
+					7FF2D3171CAB5A410019E98F = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 7FF2D2F51CAB5A410019E98F;
+					};
+				};
+			};
+			buildConfigurationList = 7FF2D2F11CAB5A410019E98F /* Build configuration list for PBXProject "Simplifi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7FF2D2ED1CAB5A410019E98F;
+			productRefGroup = 7FF2D2F71CAB5A410019E98F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7FF2D2F51CAB5A410019E98F /* Simplifi */,
+				7FF2D30C1CAB5A410019E98F /* SimplifiTests */,
+				7FF2D3171CAB5A410019E98F /* SimplifiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7FF2D2F41CAB5A410019E98F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FF2D3071CAB5A410019E98F /* LaunchScreen.storyboard in Resources */,
+				7FF2D3041CAB5A410019E98F /* Assets.xcassets in Resources */,
+				7FF2D2FF1CAB5A410019E98F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FF2D30B1CAB5A410019E98F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FF2D3161CAB5A410019E98F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7FF2D2F21CAB5A410019E98F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FF2D3021CAB5A410019E98F /* Simplifi.xcdatamodeld in Sources */,
+				7FF2D2FC1CAB5A410019E98F /* ViewController.swift in Sources */,
+				7FF2D2FA1CAB5A410019E98F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FF2D3091CAB5A410019E98F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FF2D3121CAB5A410019E98F /* SimplifiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FF2D3141CAB5A410019E98F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FF2D31D1CAB5A410019E98F /* SimplifiUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7FF2D30F1CAB5A410019E98F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7FF2D2F51CAB5A410019E98F /* Simplifi */;
+			targetProxy = 7FF2D30E1CAB5A410019E98F /* PBXContainerItemProxy */;
+		};
+		7FF2D31A1CAB5A410019E98F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7FF2D2F51CAB5A410019E98F /* Simplifi */;
+			targetProxy = 7FF2D3191CAB5A410019E98F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7FF2D2FD1CAB5A410019E98F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FF2D2FE1CAB5A410019E98F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7FF2D3051CAB5A410019E98F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FF2D3061CAB5A410019E98F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7FF2D31F1CAB5A410019E98F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7FF2D3201CAB5A410019E98F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7FF2D3221CAB5A410019E98F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Simplifi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Jared.Simplifi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7FF2D3231CAB5A410019E98F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Simplifi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Jared.Simplifi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7FF2D3251CAB5A410019E98F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SimplifiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Jared.SimplifiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Simplifi.app/Simplifi";
+			};
+			name = Debug;
+		};
+		7FF2D3261CAB5A410019E98F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SimplifiTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Jared.SimplifiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Simplifi.app/Simplifi";
+			};
+			name = Release;
+		};
+		7FF2D3281CAB5A410019E98F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SimplifiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Jared.SimplifiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Simplifi;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		7FF2D3291CAB5A410019E98F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SimplifiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Jared.SimplifiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Simplifi;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7FF2D2F11CAB5A410019E98F /* Build configuration list for PBXProject "Simplifi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FF2D31F1CAB5A410019E98F /* Debug */,
+				7FF2D3201CAB5A410019E98F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7FF2D3211CAB5A410019E98F /* Build configuration list for PBXNativeTarget "Simplifi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FF2D3221CAB5A410019E98F /* Debug */,
+				7FF2D3231CAB5A410019E98F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7FF2D3241CAB5A410019E98F /* Build configuration list for PBXNativeTarget "SimplifiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FF2D3251CAB5A410019E98F /* Debug */,
+				7FF2D3261CAB5A410019E98F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7FF2D3271CAB5A410019E98F /* Build configuration list for PBXNativeTarget "SimplifiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FF2D3281CAB5A410019E98F /* Debug */,
+				7FF2D3291CAB5A410019E98F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7FF2D3001CAB5A410019E98F /* Simplifi.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7FF2D3011CAB5A410019E98F /* Simplifi.xcdatamodel */,
+			);
+			currentVersion = 7FF2D3011CAB5A410019E98F /* Simplifi.xcdatamodel */;
+			path = Simplifi.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 7FF2D2EE1CAB5A410019E98F /* Project object */;
+}
