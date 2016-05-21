@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		526AA7290C1E123CAF55B74B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DA4D5FBF2E065336AC1875 /* Pods.framework */; };
-		7F030AEE1CBF317700F558EE /* BaseSignUpAndLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F030AED1CBF317700F558EE /* BaseSignUpAndLoginViewController.swift */; };
 		7F030AF01CC45DD700F558EE /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F030AEF1CC45DD700F558EE /* CalendarViewController.swift */; };
 		7F20295E1CAB5AC3006DD4F3 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2029521CAB5AC3006DD4F3 /* Employee.swift */; };
 		7F20295F1CAB5AC3006DD4F3 /* EmployeeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2029531CAB5AC3006DD4F3 /* EmployeeService.swift */; };
@@ -31,6 +30,9 @@
 		7F80C4081CAB8110005138D1 /* TextFieldsEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80C3FE1CAB8110005138D1 /* TextFieldsEffects.swift */; };
 		7F80C4091CAB8110005138D1 /* YokoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80C3FF1CAB8110005138D1 /* YokoTextField.swift */; };
 		7F80C40B1CACDE7F005138D1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F80C40A1CACDE7F005138D1 /* BaseViewController.swift */; };
+		7FA48A701CEE951D0068CD79 /* SimplifiUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA48A6F1CEE951D0068CD79 /* SimplifiUtility.swift */; };
+		7FA48A761CF02A720068CD79 /* EmployerSignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA48A751CF02A720068CD79 /* EmployerSignUpTableViewController.swift */; };
+		7FA48A781CF02D8A0068CD79 /* InformationEnterBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA48A771CF02D8A0068CD79 /* InformationEnterBaseCell.swift */; };
 		7FD8C6751CB227D200B8A72A /* EmployerIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD8C6741CB227D200B8A72A /* EmployerIdViewController.swift */; };
 		7FD8C6771CB2DCA700B8A72A /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD8C6761CB2DCA700B8A72A /* ClockViewController.swift */; };
 		7FD8C6BB1CB713D200B8A72A /* UserSettingsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD8C6BA1CB713D200B8A72A /* UserSettingsHandler.swift */; };
@@ -64,7 +66,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7F030AED1CBF317700F558EE /* BaseSignUpAndLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSignUpAndLoginViewController.swift; sourceTree = "<group>"; };
 		7F030AEF1CC45DD700F558EE /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		7F2029511CAB5AC3006DD4F3 /* Simplifi-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Simplifi-Bridging-Header.h"; sourceTree = "<group>"; };
 		7F2029521CAB5AC3006DD4F3 /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
@@ -92,6 +93,9 @@
 		7F80C3FE1CAB8110005138D1 /* TextFieldsEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldsEffects.swift; sourceTree = "<group>"; };
 		7F80C3FF1CAB8110005138D1 /* YokoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YokoTextField.swift; sourceTree = "<group>"; };
 		7F80C40A1CACDE7F005138D1 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		7FA48A6F1CEE951D0068CD79 /* SimplifiUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimplifiUtility.swift; sourceTree = "<group>"; };
+		7FA48A751CF02A720068CD79 /* EmployerSignUpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployerSignUpTableViewController.swift; sourceTree = "<group>"; };
+		7FA48A771CF02D8A0068CD79 /* InformationEnterBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationEnterBaseCell.swift; sourceTree = "<group>"; };
 		7FD8C6741CB227D200B8A72A /* EmployerIdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployerIdViewController.swift; sourceTree = "<group>"; };
 		7FD8C6761CB2DCA700B8A72A /* ClockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
 		7FD8C6BA1CB713D200B8A72A /* UserSettingsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsHandler.swift; sourceTree = "<group>"; };
@@ -160,6 +164,14 @@
 			path = TextFieldEffects;
 			sourceTree = "<group>";
 		};
+		7FA48A791CF02D930068CD79 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7FA48A771CF02D8A0068CD79 /* InformationEnterBaseCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		7FD8C6BC1CB713D900B8A72A /* Employee and Employer */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,11 +189,11 @@
 		7FD8C6BD1CB713EC00B8A72A /* View controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7FA48A751CF02A720068CD79 /* EmployerSignUpTableViewController.swift */,
 				7F030AEF1CC45DD700F558EE /* CalendarViewController.swift */,
 				7FD8C6761CB2DCA700B8A72A /* ClockViewController.swift */,
 				7FD8C6741CB227D200B8A72A /* EmployerIdViewController.swift */,
 				7F80C40A1CACDE7F005138D1 /* BaseViewController.swift */,
-				7F030AED1CBF317700F558EE /* BaseSignUpAndLoginViewController.swift */,
 				7F2029561CAB5AC3006DD4F3 /* FrontPageViewController.swift */,
 			);
 			name = "View controllers";
@@ -225,10 +237,12 @@
 			isa = PBXGroup;
 			children = (
 				7FD8C6BC1CB713D900B8A72A /* Employee and Employer */,
+				7FA48A791CF02D930068CD79 /* Cells */,
 				7FD8C6BD1CB713EC00B8A72A /* View controllers */,
 				7FD8C6BE1CB7142A00B8A72A /* Wifi Getter */,
 				7F20295D1CAB5AC3006DD4F3 /* SwiftyJSON.swift */,
 				7FF2D2F91CAB5A410019E98F /* AppDelegate.swift */,
+				7FA48A6F1CEE951D0068CD79 /* SimplifiUtility.swift */,
 				7FF2D2FD1CAB5A410019E98F /* Main.storyboard */,
 				7FD8C6BF1CBC6F7A00B8A72A /* GlobalTimer.swift */,
 				7FD8C6BA1CB713D200B8A72A /* UserSettingsHandler.swift */,
@@ -471,6 +485,7 @@
 				7FD8C6C21CBC7C9F00B8A72A /* WifiAddressService.swift in Sources */,
 				7F80C4011CAB8110005138D1 /* HoshiTextField.swift in Sources */,
 				7FD8C6C01CBC6F7A00B8A72A /* GlobalTimer.swift in Sources */,
+				7FA48A761CF02A720068CD79 /* EmployerSignUpTableViewController.swift in Sources */,
 				7F2029611CAB5AC3006DD4F3 /* EmployerService.swift in Sources */,
 				7FD8C6BB1CB713D200B8A72A /* UserSettingsHandler.swift in Sources */,
 				7FD8C6751CB227D200B8A72A /* EmployerIdViewController.swift in Sources */,
@@ -489,11 +504,12 @@
 				7FD8C6771CB2DCA700B8A72A /* ClockViewController.swift in Sources */,
 				7F80C4071CAB8110005138D1 /* MinoruTextField.swift in Sources */,
 				7F80C4091CAB8110005138D1 /* YokoTextField.swift in Sources */,
+				7FA48A781CF02D8A0068CD79 /* InformationEnterBaseCell.swift in Sources */,
 				7F80C4081CAB8110005138D1 /* TextFieldsEffects.swift in Sources */,
 				7F80C4041CAB8110005138D1 /* JiroTextField.swift in Sources */,
-				7F030AEE1CBF317700F558EE /* BaseSignUpAndLoginViewController.swift in Sources */,
 				7F80C3F31CAB6FE8005138D1 /* Global.swift in Sources */,
 				7F2029641CAB5AC3006DD4F3 /* GetIPAddress.m in Sources */,
+				7FA48A701CEE951D0068CD79 /* SimplifiUtility.swift in Sources */,
 				7F2029651CAB5AC3006DD4F3 /* Settings.swift in Sources */,
 				7FF2D2FA1CAB5A410019E98F /* AppDelegate.swift in Sources */,
 			);

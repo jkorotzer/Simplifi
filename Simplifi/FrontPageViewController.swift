@@ -9,9 +9,7 @@
 import UIKit
 import Alamofire
 
-class FrontPageViewController: BaseSignUpAndLoginViewController {
-    
-    private var employeeService = EmployeeService()
+class FrontPageViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()        
@@ -58,8 +56,6 @@ class FrontPageViewController: BaseSignUpAndLoginViewController {
         }
     }
     
-    
-    
     @IBAction func signUp(sender: UIButton) {
         if usernameLabel.text != "" && passwordLabel.text != "" {
             performSegueWithIdentifier("signUp", sender: self)
@@ -68,24 +64,28 @@ class FrontPageViewController: BaseSignUpAndLoginViewController {
     
     @IBAction func login(sender: UIButton) {
         if usernameLabel.text != "" && passwordLabel.text != "" {
-            employeeService.login(username: usernameLabel.text!, password: passwordLabel.text!, employeeCompletionHandler:  {[unowned self]
-                employee in
-                self.userSettingsHandler.signUpAndLogin(employee: employee)
-                dispatch_async(dispatch_get_main_queue()){
-                    self.displayActivityIndicator("Logging in...", true)
-                }
-                }, addressCompletionHandler: {[unowned self]
-                    addresses in
-                    self.userSettingsHandler.saveAddresses(addresses: addresses)
+            self.displayActivityIndicator("Logging in...", true)
+            EmployeeService.login(username: usernameLabel.text!, password: passwordLabel.text!, employeeCompletionHandler:  {[unowned self]
+                (employee, addresses) in
+                UserSettingsHandler.signUpAndLogin(employee: employee)
+                UserSettingsHandler.saveAddresses(addresses: addresses)
+                self.removeActivityIndicator()
+                self.performSegueWithIdentifier("login", sender: self)
                 }, wrongLoginHandler: {
                     [unowned self] in
                     self.passwordLabel.text = "";
-                    self.userSettingsHandler.clear()
+                    UserSettingsHandler.clear()
+                    self.removeActivityIndicator()
                     let alert = UIAlertController(title: "Login Failed", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "Try again", style: UIAlertActionStyle.Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
                 })
             }
+    }
+    
+    @IBAction func registerCompany(sender: UIButton) {
+        let registerVC = EmployerSignUpTableViewController()
+        self.presentViewController(registerVC, animated: true, completion: nil)
     }
     
     // MARK: - Navigation

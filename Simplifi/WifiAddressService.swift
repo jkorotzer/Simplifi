@@ -11,17 +11,15 @@ import Alamofire
 
 class WifiAddressService {
     
-    private var url = Settings().viewEmployers
-    
-    func getAddressesByEmployerId(employer_id employer_id: Int, completionHandler: ([String] -> Void), failureCompletionHandler: () -> Void) {
-        let currentUrl = url + "/\(employer_id)/addresses"
+    class func getAddressesByEmployerId(employer_id employer_id: Int, completionHandler: ([String] -> Void), failureCompletionHandler: () -> Void) {
+        let currentUrl = Settings.viewEmployers + "/\(employer_id)/addresses"
         var addresses = [String]()
         Alamofire.request(.GET, currentUrl)
             .responseJSON {response in
                 switch response.result {
                 case .Success(let data):
                     let json = JSON(data)
-                    for var index = 0; index < json.count; ++index {
+                    for index in 0 ..< json.count {
                         let address = json[index]["address"].string
                         addresses.append(address!)
                     }

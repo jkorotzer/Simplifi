@@ -11,10 +11,8 @@ import Alamofire
 
 class TimesheetService {
     
-    private var url = Settings().viewEmployees
-    
-    func postTimesheet(checkIn checkIn: Bool, completionHandler: ()->Void) {
-        let currentUrl = url + "/\(NSUserDefaults.standardUserDefaults().objectForKey(NSKeys.EmployeeId) as! Int)/timesheets"
+    class func postTimesheet(checkIn checkIn: Bool, completionHandler: ()->Void) {
+        let currentUrl = Settings.viewEmployees + "/\(NSUserDefaults.standardUserDefaults().objectForKey(NSKeys.EmployeeId) as! Int)/timesheets"
         Alamofire.request(.POST, currentUrl, parameters: ["timesheet":["in": "\(checkIn)"]], encoding: .JSON).validate()
             .responseJSON { response in
                 switch response.result {
@@ -29,14 +27,14 @@ class TimesheetService {
         }
     }
     
-    func getTimeForDay(year year: Int, month: Int, day: Int, completionHandler: (Int -> Void)) {
-        let currentUrl = url + "/\(NSUserDefaults.standardUserDefaults().objectForKey(NSKeys.EmployeeId) as! Int)/timesheets/time"
-        Alamofire.request(.POST, currentUrl, parameters: ["time":["year": year, "day": day, "month": month]], encoding: .JSON).validate()
+    class func getTimeForToday(completionHandler: (Int -> Void)) {
+        let date = SimplifiUtility.getTodaysDate()
+        let currentUrl = Settings.viewEmployees + "/\(NSUserDefaults.standardUserDefaults().objectForKey(NSKeys.EmployeeId) as! Int)/timesheets/time"
+        Alamofire.request(.POST, currentUrl, parameters: ["time":["year": date.2, "day": date.0, "month": date.1]], encoding: .JSON).validate()
             .responseJSON { response in
                 switch response.result {
                 case .Success(let data):
                     let seconds = data
-                    print(data)
                     completionHandler(seconds as! Int)
                     break
                 case .Failure(let error):

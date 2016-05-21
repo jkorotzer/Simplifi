@@ -10,26 +10,25 @@ import Foundation
 import Alamofire
 
 class EmployeeService {
+        
+    private let url = Settings.viewEmployees
     
-    private var userSettingsHandler = UserSettingsHandler()
+    private let loginUrl = Settings.loginEmployee
     
-    private let url = Settings().viewEmployees
-    
-    private let loginUrl = Settings().loginEmployee
+    private let signUpUrl = Settings.signupEmployee
     
     private var addressService = WifiAddressService()
     
-    func requestAllEmployees(completionHandler: ([Employee] -> Void)) {
+    class func requestAllEmployees(completionHandler: ([Employee] -> Void)) {
         
         var employees = [Employee]()
-               Alamofire.request(.GET, url)
+               Alamofire.request(.GET, Settings.viewEmployees)
             .responseJSON {response in
                 switch response.result {
                 case .Success(let data):
                     
                     let json = JSON(data)
-                    //print(json)
-                    for var index = 0; index<json.count; ++index {
+                    for index in 0 ..< json.count {
                         let id = json[index]["id"].int
                         let employer_id = json[index]["employer_id"].int
                         let name = json[index]["name"].string
@@ -46,8 +45,8 @@ class EmployeeService {
 
     }
     
-    func requestEmployeeWithId(id: Int,completionHandler: (Employee -> Void)){
-        Alamofire.request(.GET, url+"/"+String(id))
+    class func requestEmployeeWithId(id: Int, completionHandler: (Employee -> Void), failureCompletionHandler: () -> Void){
+        Alamofire.request(.GET, Settings.viewEmployees+"/"+String(id))
         .responseJSON {response in
         switch response.result {
             case .Success(let data):
@@ -61,63 +60,71 @@ class EmployeeService {
                     completionHandler(employee as Employee)
                 }
             case .Failure(let error):
+                failureCompletionHandler()
                 print(error)
-                print("json is empty")
             }
         }
     }
 
-    func signUp(e: Employee, employeeCompletionHandler: (Employee -> Void), addressCompletionHandler: ([String] -> Void), failureCompletionHandler: () -> Void) {
-        
-        Alamofire.request(.POST, url, parameters: ["employee":["employer_id": e.employer_id, "name": e.name, "password": e.password]], encoding: .JSON).validate()
+    class func signUp(e: Employee, employeeCompletionHandler: ((Employee, [String]) -> Void), failureCompletionHandler: () -> Void) {
+        print(e)
+        Alamofire.request(.POST, Settings.signupEmployee, parameters: ["employee":["employer_id": e.employer_id, "name": e.name, "password": e.password]], encoding: .JSON).validate()
             .responseJSON { response in
                 switch response.result {
                 case .Success(let data):
                     let json = JSON(data)
-                    let id = json["id"]
+                    let id = json["employee"]["id"]
                     if id.error == nil {
-                        let employer_id = json["employer_id"].int!
-                        let name = json["name"].string!
-                        let password = json["password_digest"].string!
+                        let employer_id = json["employee"]["employer_id"].int!
+                        let name = json["employee"]["name"].string!
+                        let password = json["employee"]["password_digest"].string!
                         let e : Employee = Employee(employer_id: employer_id, name: name, password: password)
-                        e.id = json["id"].int!
-                        self.addressService.getAddressesByEmployerId(employer_id: employer_id, completionHandler: addressCompletionHandler, failureCompletionHandler: failureCompletionHandler)
-                        employeeCompletionHandler(e as Employee)
+                        e.id = json["employee"]["id"].int!
+                        var addresses = [String]()
+                        for index in 0 ..< json["addresses"].count {
+                            addresses.append(json["addresses"][index]["address"].string!)
+                        }
+                        employeeCompletionHandler(e as Employee, addresses as [String])
                     } else {
                         failureCompletionHandler()
                     }
                     break
                 case .Failure(let error):
+                    print(error)
                     failureCompletionHandler()
                     break
                 }
             }
     }
     
-    func updateEmployee(id: Int, e:Employee) {
-        Alamofire.request(.PUT, url+"/"+String(id), parameters:["employee":["employer_id":e.employer_id, "name": e.name, "password":e.password]], encoding: .JSON)
+    class func updateEmployee(id: Int, e:Employee) {
+        Alamofire.request(.PUT, Settings.viewEmployees+"/"+String(id), parameters:["employee":["employer_id":e.employer_id, "name": e.name, "password":e.password]], encoding: .JSON)
     }
     
-    func login(username username: String, password: String, employeeCompletionHandler: (Employee -> Void), addressCompletionHandler: ([String] -> Void), wrongLoginHandler: (() -> Void)) {
-        Alamofire.request(.POST, loginUrl, parameters: ["name": username, "password": password], encoding: .JSON).validate()
+    class func login(username username: String, password: String, employeeCompletionHandler: ((Employee, [String]) -> Void),wrongLoginHandler: (() -> Void)) {
+        Alamofire.request(.POST, Settings.loginEmployee, parameters: ["name": username, "password": password], encoding: .JSON).validate()
             .responseJSON { response in
                 switch response.result {
                 case .Success(let data):
                     let json = JSON(data)
-                    let id = json["id"]
+                    let id = json["employee"]["id"]
                     if id.error == nil {
-                        let employer_id = json["employer_id"].int!
-                        let name = json["name"].string!
-                        let password = json["password_digest"].string!
+                        let employer_id = json["employee"]["employer_id"].int!
+                        let name = json["employee"]["name"].string!
+                        let password = json["employee"]["password_digest"].string!
                         let e : Employee = Employee(employer_id: employer_id, name: name, password: password)
-                        e.id = json["id"].int!
-                        self.addressService.getAddressesByEmployerId(employer_id: employer_id, completionHandler: addressCompletionHandler, failureCompletionHandler: wrongLoginHandler)
-                        employeeCompletionHandler(e as Employee)
+                        e.id = json["employee"]["id"].int!
+                        var addresses = [String]()
+                        for index in 0 ..< json["addresses"].count {
+                            addresses.append(json["addresses"][index]["address"].string!)
+                        }
+                        employeeCompletionHandler(e as Employee, addresses as [String])
                     } else {
                         wrongLoginHandler()
                     }
                     break
                 case .Failure(let error):
+                    print(error)
                     wrongLoginHandler()
                     break
                 }

@@ -10,8 +10,9 @@ import Foundation
 
 struct Settings {
     
-        let viewEmployees = "https://simplifi.herokuapp.com/api/v1/employees"
-        let viewEmployers = "https://simplifi.herokuapp.com/api/v1/employers"
-        let loginEmployee = "https://simplifi.herokuapp.com/api/v1/login"
+        static let viewEmployees = "https://simplifi.herokuapp.com/api/v1/employees"
+        static let viewEmployers = "https://simplifi.herokuapp.com/api/v1/employers"
+        static let loginEmployee = "https://simplifi.herokuapp.com/api/v1/login"
+        static let signupEmployee = "https://simplifi.herokuapp.com/api/v1/signup"
 
 }

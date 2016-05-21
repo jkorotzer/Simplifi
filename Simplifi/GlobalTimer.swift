@@ -26,89 +26,76 @@ extension GetIPAddress {
     }
 }
 
-struct NSNotificationCenterKey {
-    static let LoginOrLogout = "Login Did Change"
+protocol GlobalTimerDelegate {
+    func globalTimerSecondsDidChange()
+    func userDidLoginOrLogout()
+    func userUnableToCheckIn()
 }
 
 class GlobalTimer: NSObject {
     
-    class InternalTimer: NSObject {
-        
-        private var internalTimer: NSTimer?
-        private weak var secondsTimer: NSTimer?
-        private var timesheetService = TimesheetService()
-        private var addressGetter = GetIPAddress()
-        var secondsSinceLastLoginCounter = 0
-        var checkedIn = false
-        
-        func startTimer() {
-            if !isTimerRunning() {
-                internalTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("checkLoginLogout:"), userInfo: nil, repeats: true)
-            }
+    static let sharedTimer = GlobalTimer()
+    
+    private var internalTimer: NSTimer?
+    private weak var secondsTimer: NSTimer?
+    private var addressGetter = GetIPAddress()
+    var seconds = -1 {
+        didSet {
+            secondsHasBeenSet = true
+            delegate?.globalTimerSecondsDidChange()
         }
-        
-        func stopTimer(){
-            if isTimerRunning() {
-                internalTimer?.invalidate()
-            }
-        }
-        
-        func isTimerRunning() -> Bool {
-            return internalTimer != nil
-        }
-        
-        func checkLoginLogout(sender: AnyObject?){
-            checkLogin()
-        }
-        
-        /*func checkLogout() {
-            if !(addressGetter.wifiAddressIsInEmployerAddresses()) {
-                logout()
-            }
-        }*/
-        
-        func logout() {
-            timesheetService.postTimesheet(checkIn: false, completionHandler: {
-                self.secondsTimer?.invalidate()
-                self.checkedIn = false
-                let notification = NSNotification(name: NSNotificationCenterKey.LoginOrLogout, object: nil)
-                NSNotificationCenter.defaultCenter().postNotification(notification)
-            })
-        }
-        
-        func login() {
-            timesheetService.postTimesheet(checkIn: true, completionHandler:  {
-                self.checkedIn = true
-                self.secondsTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("addSecond:"), userInfo: nil, repeats: true)
-            })
-            self.stopTimer()
-        }
-        
-        func checkLogin() {
-            if addressGetter.wifiAddressIsInEmployerAddresses() {
-                login()
-            }
-        }
-        
-        func addSecond(sender: AnyObject?) {
-            secondsSinceLastLoginCounter++
-            let notification = NSNotification(name: NSNotificationCenterKey.LoginOrLogout, object: nil)
-            NSNotificationCenter.defaultCenter().postNotification(notification)
-        }
-        
     }
     
-    static var internalTimer = InternalTimer()
+    var secondsHasBeenSet = false
+    var checkedIn = false
+    var delegate: GlobalTimerDelegate?
     
-    static func getSeconds() -> Int {
-        return internalTimer.secondsSinceLastLoginCounter
+    func startTimer() {
+        if !isTimerRunning() {
+            internalTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector(checkLogin()), userInfo: nil, repeats: true)
+        }
     }
     
-    static func isCheckedIn() -> Bool {
-        return internalTimer.checkedIn
+    func stopTimer(){
+        if isTimerRunning() {
+            internalTimer?.invalidate()
+        }
     }
     
-    static func checkout() {
-        internalTimer.logout()
+    func isTimerRunning() -> Bool {
+        return internalTimer != nil
     }
+    
+    func checkLoginLogout(sender: AnyObject?){
+        checkLogin()
+    }
+    
+    func logout() {
+        TimesheetService.postTimesheet(checkIn: false, completionHandler: {
+            self.secondsTimer?.invalidate()
+            self.checkedIn = false
+            self.delegate?.userDidLoginOrLogout()
+        })
+    }
+    
+    func login() {
+        TimesheetService.postTimesheet(checkIn: true, completionHandler:  {
+            self.checkedIn = true
+            self.delegate?.userDidLoginOrLogout()
+            self.secondsTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(GlobalTimer.addSecond(_:)), userInfo: nil, repeats: true)
+        })
+    }
+    
+    func checkLogin() {
+        if addressGetter.wifiAddressIsInEmployerAddresses() {
+            login()
+        } else {
+            delegate?.userUnableToCheckIn()
+        }
+    }
+    
+    func addSecond(sender: AnyObject?) {
+        seconds += 1
+    }
+    
 }

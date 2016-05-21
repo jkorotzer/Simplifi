@@ -6,4 +6,4 @@ use_frameworks!
 xcodeproj 'Simplifi'
 
 pod 'Alamofire', '~> 3.0'
-
+pod 'SnapKit', '~> 0.15.0'

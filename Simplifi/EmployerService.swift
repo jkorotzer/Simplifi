@@ -11,18 +11,16 @@ import Alamofire
 
 class EmployerService {
         
-    private let url = Settings().viewEmployers
-
-    func requestAllEmployers(completionHandler: ([Employer] -> Void)) {
+    class func requestAllEmployers(completionHandler: ([Employer] -> Void)) {
     
         var employers = [Employer]()
-        Alamofire.request(.GET, url)
+        Alamofire.request(.GET, Settings.viewEmployers)
             .responseJSON {response in
             switch response.result {
             case .Success(let data):
                 
                 let json = JSON(data)
-                for var index = 0; index<json.count; ++index{
+                for index in 0 ..< json.count{
                     let id = json[index]["id"].int
                     let name = json[index]["name"].string
                     let password = json[index]["password_digest"].string
@@ -37,8 +35,8 @@ class EmployerService {
         }
     }
 
-    func requestWithId(id: Int, completionHandler: (Employer -> Void)){
-        Alamofire.request(.GET, url+"/"+String(id))
+    class func requestWithId(id: Int, completionHandler: (Employer -> Void)){
+        Alamofire.request(.GET, Settings.viewEmployers+"/"+String(id))
         .responseJSON {response in
             switch response.result {
             case .Success(let data):
@@ -57,11 +55,11 @@ class EmployerService {
         }
     }
 
-    func signUpEmployer(e: Employer){
-        Alamofire.request(.POST, url, parameters: ["employer":["name": e.name, "password": e.password, "company_name":e.company_name]], encoding: .JSON)
+    class func signUpEmployer(e: Employer){
+        Alamofire.request(.POST, Settings.viewEmployers, parameters: ["employer":["name": e.name, "password": e.password, "company_name":e.company_name]], encoding: .JSON)
     }
 
-    func updateEmployer(id: Int, e :Employer) {
-        Alamofire.request(.PUT, url+"/"+String(id), parameters:["employer":["name": e.name, "password_digest":e.password, "company_name": e.company_name]], encoding: .JSON)
+    class func updateEmployer(id: Int, e :Employer) {
+        Alamofire.request(.PUT, Settings.viewEmployers+"/"+String(id), parameters:["employer":["name": e.name, "password_digest":e.password, "company_name": e.company_name]], encoding: .JSON)
     }
 }
