@@ -51,39 +51,25 @@ class GlobalTimer: NSObject {
     var delegate: GlobalTimerDelegate?
     
     func startTimer() {
-        if !isTimerRunning() {
-            internalTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector(checkLogin()), userInfo: nil, repeats: true)
-        }
-    }
-    
-    func stopTimer(){
-        if isTimerRunning() {
-            internalTimer?.invalidate()
-        }
-    }
-    
-    func isTimerRunning() -> Bool {
-        return internalTimer != nil
-    }
-    
-    func checkLoginLogout(sender: AnyObject?){
-        checkLogin()
+        self.internalTimer?.invalidate()
+        self.internalTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(GlobalTimer.addSecond(_:)), userInfo: nil, repeats: false)
     }
     
     func logout() {
         TimesheetService.postTimesheet(checkIn: false, completionHandler: {
-            self.secondsTimer?.invalidate()
             self.checkedIn = false
             self.delegate?.userDidLoginOrLogout()
         })
     }
     
     func login() {
-        TimesheetService.postTimesheet(checkIn: true, completionHandler:  {
-            self.checkedIn = true
-            self.delegate?.userDidLoginOrLogout()
-            self.secondsTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(GlobalTimer.addSecond(_:)), userInfo: nil, repeats: true)
-        })
+        if !checkedIn {
+            TimesheetService.postTimesheet(checkIn: true, completionHandler:  {
+                self.checkedIn = true
+                self.delegate?.userDidLoginOrLogout()
+                self.startTimer()
+            })
+        }
     }
     
     func checkLogin() {
@@ -91,11 +77,15 @@ class GlobalTimer: NSObject {
             login()
         } else {
             delegate?.userUnableToCheckIn()
+            logout()
         }
     }
     
     func addSecond(sender: AnyObject?) {
-        seconds += 1
+        if checkedIn {
+            seconds += 1
+            self.internalTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(GlobalTimer.addSecond(_:)), userInfo: nil, repeats: false)
+        }
     }
     
 }

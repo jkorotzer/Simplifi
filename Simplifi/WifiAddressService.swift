@@ -30,4 +30,27 @@ class WifiAddressService {
         }
     }
     
+    class func postAddresses(addresses: [String], employer_id: Int, completionHandler: () -> Void, errorHandler: () -> Void) {
+        let currentUrl = Settings.viewEmployers + "/\(employer_id)/addresses"
+        let numTimes = addresses.count
+        var count = 0
+        for address in addresses {
+            Alamofire.request(.POST, currentUrl, parameters: ["address":["address":address]], encoding: .JSON).responseJSON { (response) in
+                switch response.result {
+                case .Success(_):
+                    count = count + 1
+                    print(count)
+                    if count == numTimes {
+                        completionHandler()
+                    }
+                case .Failure(_):
+                    count = count + 1
+                    if count == numTimes {
+                        errorHandler()
+                    }
+                }
+            }
+        }
+    }
+    
 }

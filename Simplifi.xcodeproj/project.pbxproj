@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		526AA7290C1E123CAF55B74B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DA4D5FBF2E065336AC1875 /* Pods.framework */; };
 		7F030AF01CC45DD700F558EE /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F030AEF1CC45DD700F558EE /* CalendarViewController.swift */; };
+		7F0F9A291CF0387A00D4ADD2 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F9A281CF0387A00D4ADD2 /* BaseTableViewController.swift */; };
+		7F0F9A2B1CF21BF000D4ADD2 /* TextViewBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F9A2A1CF21BF000D4ADD2 /* TextViewBaseCell.swift */; };
+		7F0F9A2F1CF2670200D4ADD2 /* LabelBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F9A2E1CF2670200D4ADD2 /* LabelBaseCell.swift */; };
+		7F0F9A311CF26BD900D4ADD2 /* CalendarDateSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F9A301CF26BD900D4ADD2 /* CalendarDateSelectTableViewCell.swift */; };
 		7F20295E1CAB5AC3006DD4F3 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2029521CAB5AC3006DD4F3 /* Employee.swift */; };
 		7F20295F1CAB5AC3006DD4F3 /* EmployeeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2029531CAB5AC3006DD4F3 /* EmployeeService.swift */; };
 		7F2029601CAB5AC3006DD4F3 /* Employer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2029541CAB5AC3006DD4F3 /* Employer.swift */; };
@@ -67,6 +71,10 @@
 
 /* Begin PBXFileReference section */
 		7F030AEF1CC45DD700F558EE /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		7F0F9A281CF0387A00D4ADD2 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		7F0F9A2A1CF21BF000D4ADD2 /* TextViewBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewBaseCell.swift; sourceTree = "<group>"; };
+		7F0F9A2E1CF2670200D4ADD2 /* LabelBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelBaseCell.swift; sourceTree = "<group>"; };
+		7F0F9A301CF26BD900D4ADD2 /* CalendarDateSelectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDateSelectTableViewCell.swift; sourceTree = "<group>"; };
 		7F2029511CAB5AC3006DD4F3 /* Simplifi-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Simplifi-Bridging-Header.h"; sourceTree = "<group>"; };
 		7F2029521CAB5AC3006DD4F3 /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		7F2029531CAB5AC3006DD4F3 /* EmployeeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeService.swift; sourceTree = "<group>"; };
@@ -167,7 +175,10 @@
 		7FA48A791CF02D930068CD79 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				7F0F9A2E1CF2670200D4ADD2 /* LabelBaseCell.swift */,
+				7F0F9A2A1CF21BF000D4ADD2 /* TextViewBaseCell.swift */,
 				7FA48A771CF02D8A0068CD79 /* InformationEnterBaseCell.swift */,
+				7F0F9A301CF26BD900D4ADD2 /* CalendarDateSelectTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -190,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				7FA48A751CF02A720068CD79 /* EmployerSignUpTableViewController.swift */,
+				7F0F9A281CF0387A00D4ADD2 /* BaseTableViewController.swift */,
 				7F030AEF1CC45DD700F558EE /* CalendarViewController.swift */,
 				7FD8C6761CB2DCA700B8A72A /* ClockViewController.swift */,
 				7FD8C6741CB227D200B8A72A /* EmployerIdViewController.swift */,
@@ -480,8 +492,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F0F9A2F1CF2670200D4ADD2 /* LabelBaseCell.swift in Sources */,
 				7F030AF01CC45DD700F558EE /* CalendarViewController.swift in Sources */,
 				7FF2D3021CAB5A410019E98F /* Simplifi.xcdatamodeld in Sources */,
+				7F0F9A311CF26BD900D4ADD2 /* CalendarDateSelectTableViewCell.swift in Sources */,
 				7FD8C6C21CBC7C9F00B8A72A /* WifiAddressService.swift in Sources */,
 				7F80C4011CAB8110005138D1 /* HoshiTextField.swift in Sources */,
 				7FD8C6C01CBC6F7A00B8A72A /* GlobalTimer.swift in Sources */,
@@ -489,8 +503,10 @@
 				7F2029611CAB5AC3006DD4F3 /* EmployerService.swift in Sources */,
 				7FD8C6BB1CB713D200B8A72A /* UserSettingsHandler.swift in Sources */,
 				7FD8C6751CB227D200B8A72A /* EmployerIdViewController.swift in Sources */,
+				7F0F9A291CF0387A00D4ADD2 /* BaseTableViewController.swift in Sources */,
 				7F80C4051CAB8110005138D1 /* KaedeTextField.swift in Sources */,
 				7F2029631CAB5AC3006DD4F3 /* getgateway.c in Sources */,
+				7F0F9A2B1CF21BF000D4ADD2 /* TextViewBaseCell.swift in Sources */,
 				7F2029661CAB5AC3006DD4F3 /* SwiftyJSON.swift in Sources */,
 				7F20295E1CAB5AC3006DD4F3 /* Employee.swift in Sources */,
 				7F20295F1CAB5AC3006DD4F3 /* EmployeeService.swift in Sources */,

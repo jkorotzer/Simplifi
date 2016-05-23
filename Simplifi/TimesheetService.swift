@@ -29,7 +29,7 @@ class TimesheetService {
     
     class func getTimeForToday(completionHandler: (Int -> Void)) {
         let date = SimplifiUtility.getTodaysDate()
-        let currentUrl = Settings.viewEmployees + "/\(NSUserDefaults.standardUserDefaults().objectForKey(NSKeys.EmployeeId) as! Int)/timesheets/time"
+        let currentUrl = Settings.viewEmployees + "/\(NSUserDefaults.standardUserDefaults().objectForKey(NSKeys.EmployeeId) as! Int)/timesheets/time_today"
         Alamofire.request(.POST, currentUrl, parameters: ["time":["year": date.2, "day": date.0, "month": date.1]], encoding: .JSON).validate()
             .responseJSON { response in
                 switch response.result {
@@ -41,6 +41,22 @@ class TimesheetService {
                     print(error)
                     break
                 }
+        }
+    }
+    
+    class func getTimesForDays(startDay: Int, numDays: Int, month: Int, year: Int, completionHandler: ([Int] -> Void), errorHandler: () -> Void) {
+        let url = Settings.viewEmployees + "/\(NSUserDefaults.standardUserDefaults().objectForKey(NSKeys.EmployeeId) as! Int)/timesheets/time"
+        Alamofire.request(.POST, url, parameters: ["time":["year": year, "month": month, "start_day": startDay, "num_days": numDays]], encoding: .JSON).validate().responseJSON { (response) in
+            switch response.result {
+            case .Success(let data):
+                let times = data as! [Int]
+                completionHandler(times as [Int])
+                break
+            case .Failure(let error):
+                print(error)
+                errorHandler()
+                break
+            }
         }
     }
     

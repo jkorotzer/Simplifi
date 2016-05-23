@@ -68,16 +68,6 @@ class BaseViewController: UIViewController {
         }
     }
     
-    func setupHoshiTextField(textfield: HoshiTextField, placeholder: String?) {
-        textfield.placeholderColor = UIColor.lightGrayColor()
-        textfield.borderInactiveColor = UIColor.darkGrayColor()
-        textfield.borderActiveColor = SimplifiColor()
-        textfield.borderStyle = .None
-        if let holder = placeholder {
-            textfield.placeholder = holder
-        }
-    }
-    
     func setupSimplifiButton(button: UIButton) {
         button.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         button.backgroundColor = SimplifiColor()
@@ -118,5 +108,19 @@ extension UIScreen {
     
     class func screenHeight() -> CGFloat {
         return UIScreen.mainScreen().bounds.size.height
+    }
+}
+
+extension UITextField {
+    class func setupHoshiTextField(textfield: HoshiTextField, placeholder: String?) {
+        textfield.borderStyle = .None
+        textfield.font = UIFont(name: "HelveticaNeue", size: 24)
+        textfield.placeholderColor = UIColor.lightGrayColor()
+        textfield.borderInactiveColor = UIColor.darkGrayColor()
+        textfield.borderActiveColor = SimplifiColor()
+        textfield.borderStyle = .None
+        if let holder = placeholder {
+            textfield.placeholder = holder
+        }
     }
 }

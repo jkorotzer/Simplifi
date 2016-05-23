@@ -22,7 +22,7 @@ class EmployerIdViewController: BaseViewController {
 
     @IBOutlet weak var employerIdTextField: HoshiTextField! {
         didSet {
-            setupHoshiTextField(employerIdTextField, placeholder: "Please enter your Employer's ID")
+            UITextField.setupHoshiTextField(employerIdTextField, placeholder: "Please enter your Employer's ID")
             employerIdTextField.keyboardType = .NumberPad
         }
     }

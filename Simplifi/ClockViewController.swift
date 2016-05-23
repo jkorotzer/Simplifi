@@ -48,7 +48,6 @@ class ClockViewController: BaseViewController, GlobalTimerDelegate {
         if GlobalTimer.sharedTimer.secondsHasBeenSet {
             if GlobalTimer.sharedTimer.checkedIn {
                 GlobalTimer.sharedTimer.logout()
-                GlobalTimer.sharedTimer.stopTimer()
             } else {
                 GlobalTimer.sharedTimer.checkLogin()
             }
@@ -73,13 +72,8 @@ class ClockViewController: BaseViewController, GlobalTimerDelegate {
     private func updateUI() {
         if GlobalTimer.sharedTimer.secondsHasBeenSet {
             let seconds = GlobalTimer.sharedTimer.seconds
+            clockLabel.text = SimplifiUtility.timeStringForSeconds(seconds)
             if GlobalTimer.sharedTimer.checkedIn {
-                let hours = seconds / 3600
-                let hoursString = NSString(format: "%02d", hours)
-                let currentMinutes = (seconds % 3600) / 60
-                let minutesString = NSString(format: "%02d", currentMinutes)
-                let secondsString = NSString(format: "%02d", (seconds % 3600) % 60)
-                clockLabel.text = "\(hoursString):\(minutesString):\(secondsString)"
                 instructionLabel.text = "Take a break or check out:"
                 clockButton.setTitle("Break", forState: .Normal)
             } else {

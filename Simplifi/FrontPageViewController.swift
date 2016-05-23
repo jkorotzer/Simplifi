@@ -45,13 +45,13 @@ class FrontPageViewController: BaseViewController {
     
     @IBOutlet weak var usernameLabel: HoshiTextField! {
         didSet {
-            setupHoshiTextField(usernameLabel, placeholder: "Enter your username")
+            UITextField.setupHoshiTextField(usernameLabel, placeholder: "Enter your username")
         }
     }
     
     @IBOutlet weak var passwordLabel: HoshiTextField! {
         didSet {
-            setupHoshiTextField(passwordLabel, placeholder: "Enter your password")
+            UITextField.setupHoshiTextField(passwordLabel, placeholder: "Enter your password")
             passwordLabel.secureTextEntry = true
         }
     }
@@ -85,7 +85,8 @@ class FrontPageViewController: BaseViewController {
     
     @IBAction func registerCompany(sender: UIButton) {
         let registerVC = EmployerSignUpTableViewController()
-        self.presentViewController(registerVC, animated: true, completion: nil)
+        let navCon = UINavigationController(rootViewController: registerVC)
+        self.presentViewController(navCon, animated: true, completion: nil)
     }
     
     // MARK: - Navigation

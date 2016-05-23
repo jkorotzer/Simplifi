@@ -55,8 +55,18 @@ class EmployerService {
         }
     }
 
-    class func signUpEmployer(e: Employer){
-        Alamofire.request(.POST, Settings.viewEmployers, parameters: ["employer":["name": e.name, "password": e.password, "company_name":e.company_name]], encoding: .JSON)
+    class func signUpEmployer(e: Employer, completionHandler: (Employer -> Void)){
+        Alamofire.request(.POST, Settings.viewEmployers, parameters: ["employer":["name": e.name, "password": e.password, "company_name":e.company_name]], encoding: .JSON).responseJSON { (response) in
+            switch response.result {
+            case .Success(let data):
+            let json = JSON(data)
+            let employer = Employer(id: json["id"].int!, name: json["name"].string!, password: json["password_digest"].string!, company_name: json["company_name"].string!)
+                print("employer done")
+                completionHandler(employer as Employer)
+            case .Failure(let error):
+                print(error)
+            }
+        }
     }
 
     class func updateEmployer(id: Int, e :Employer) {
