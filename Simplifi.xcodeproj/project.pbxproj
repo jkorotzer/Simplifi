@@ -13,6 +13,8 @@
 		7F0F9A2B1CF21BF000D4ADD2 /* TextViewBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F9A2A1CF21BF000D4ADD2 /* TextViewBaseCell.swift */; };
 		7F0F9A2F1CF2670200D4ADD2 /* LabelBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F9A2E1CF2670200D4ADD2 /* LabelBaseCell.swift */; };
 		7F0F9A311CF26BD900D4ADD2 /* CalendarDateSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F9A301CF26BD900D4ADD2 /* CalendarDateSelectTableViewCell.swift */; };
+		7F0F9A331CF95A1600D4ADD2 /* PersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F9A321CF95A1600D4ADD2 /* PersonalInfoViewController.swift */; };
+		7F0F9A351CF9669100D4ADD2 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F9A341CF9669100D4ADD2 /* ButtonCell.swift */; };
 		7F20295E1CAB5AC3006DD4F3 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2029521CAB5AC3006DD4F3 /* Employee.swift */; };
 		7F20295F1CAB5AC3006DD4F3 /* EmployeeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2029531CAB5AC3006DD4F3 /* EmployeeService.swift */; };
 		7F2029601CAB5AC3006DD4F3 /* Employer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2029541CAB5AC3006DD4F3 /* Employer.swift */; };
@@ -75,6 +77,8 @@
 		7F0F9A2A1CF21BF000D4ADD2 /* TextViewBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewBaseCell.swift; sourceTree = "<group>"; };
 		7F0F9A2E1CF2670200D4ADD2 /* LabelBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelBaseCell.swift; sourceTree = "<group>"; };
 		7F0F9A301CF26BD900D4ADD2 /* CalendarDateSelectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDateSelectTableViewCell.swift; sourceTree = "<group>"; };
+		7F0F9A321CF95A1600D4ADD2 /* PersonalInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewController.swift; sourceTree = "<group>"; };
+		7F0F9A341CF9669100D4ADD2 /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 		7F2029511CAB5AC3006DD4F3 /* Simplifi-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Simplifi-Bridging-Header.h"; sourceTree = "<group>"; };
 		7F2029521CAB5AC3006DD4F3 /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		7F2029531CAB5AC3006DD4F3 /* EmployeeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeService.swift; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 		7FA48A791CF02D930068CD79 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				7F0F9A341CF9669100D4ADD2 /* ButtonCell.swift */,
 				7F0F9A2E1CF2670200D4ADD2 /* LabelBaseCell.swift */,
 				7F0F9A2A1CF21BF000D4ADD2 /* TextViewBaseCell.swift */,
 				7FA48A771CF02D8A0068CD79 /* InformationEnterBaseCell.swift */,
@@ -200,6 +205,7 @@
 		7FD8C6BD1CB713EC00B8A72A /* View controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7F0F9A321CF95A1600D4ADD2 /* PersonalInfoViewController.swift */,
 				7FA48A751CF02A720068CD79 /* EmployerSignUpTableViewController.swift */,
 				7F0F9A281CF0387A00D4ADD2 /* BaseTableViewController.swift */,
 				7F030AEF1CC45DD700F558EE /* CalendarViewController.swift */,
@@ -511,6 +517,7 @@
 				7F20295E1CAB5AC3006DD4F3 /* Employee.swift in Sources */,
 				7F20295F1CAB5AC3006DD4F3 /* EmployeeService.swift in Sources */,
 				7F2029621CAB5AC3006DD4F3 /* FrontPageViewController.swift in Sources */,
+				7F0F9A351CF9669100D4ADD2 /* ButtonCell.swift in Sources */,
 				7F2029601CAB5AC3006DD4F3 /* Employer.swift in Sources */,
 				7FFF97AF1CBDF0E100BD8E5F /* TimesheetService.swift in Sources */,
 				7F80C4031CAB8110005138D1 /* IsaoTextField.swift in Sources */,
@@ -526,6 +533,7 @@
 				7F80C3F31CAB6FE8005138D1 /* Global.swift in Sources */,
 				7F2029641CAB5AC3006DD4F3 /* GetIPAddress.m in Sources */,
 				7FA48A701CEE951D0068CD79 /* SimplifiUtility.swift in Sources */,
+				7F0F9A331CF95A1600D4ADD2 /* PersonalInfoViewController.swift in Sources */,
 				7F2029651CAB5AC3006DD4F3 /* Settings.swift in Sources */,
 				7FF2D2FA1CAB5A410019E98F /* AppDelegate.swift in Sources */,
 			);

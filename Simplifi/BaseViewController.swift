@@ -22,6 +22,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         setNotificationListers()
         setTapGestureRecognizer()
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
     }
     
     deinit {
@@ -61,16 +62,16 @@ class BaseViewController: UIViewController {
         
     }
     
+    func setupSimplifiButton(button: UIButton) {
+        button.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        button.backgroundColor = SimplifiColor()
+    }
+    
     func keyboardWillHide(notification: NSNotification) {
         if keyboard {
             keyboard = false
             self.view.frame.origin.y += currentlyRaised
         }
-    }
-    
-    func setupSimplifiButton(button: UIButton) {
-        button.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        button.backgroundColor = SimplifiColor()
     }
     
     func displayActivityIndicator(msg:String, _ indicator:Bool ) {

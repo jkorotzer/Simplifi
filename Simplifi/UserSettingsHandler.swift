@@ -16,6 +16,13 @@ struct NSKeys {
     static let EmployerId = "employer_id"
     static let EmployeeId = "employee_id"
     static let Addresses = "addresses"
+    static let FirstName = "first_name"
+    static let LastName = "last_name"
+    static let JobTitle = "job_title"
+    static let CompanyName = "company_name"
+    static let HoursPerWeek = "hours_per_week"
+    static let WagePerHour = "wage_per_hour"
+    static let Notes = "notes"
 }
 
 struct NotificationKeys {
@@ -34,6 +41,12 @@ class UserSettingsHandler {
     }
     
     class func signUpAndLogin(employee employee: Employee) {
+        UserSettingsHandler.saveEmployee(employee: employee)
+        let notification = NSNotification(name: NotificationKeys.USER_LOGGED_IN, object: self)
+        NSNotificationCenter.defaultCenter().postNotification(notification)
+    }
+    
+    class func saveEmployee(employee employee: Employee) {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         let username = employee.name
         let password = employee.password
@@ -43,14 +56,29 @@ class UserSettingsHandler {
         userDefaults.setObject(password, forKey: NSKeys.Password)
         userDefaults.setObject(employer_id, forKey: NSKeys.EmployerId)
         userDefaults.setObject(employee_id, forKey: NSKeys.EmployeeId)
-        userDefaults.setObject(true, forKey: NSKeys.IsLoggedIn)
-        let notification = NSNotification(name: NotificationKeys.USER_LOGGED_IN, object: self)
-        NSNotificationCenter.defaultCenter().postNotification(notification)
-        print(userDefaults.objectForKey(NSKeys.Username))
-        print(userDefaults.objectForKey(NSKeys.Password))
-        print(userDefaults.objectForKey(NSKeys.EmployerId))
         print(userDefaults.objectForKey(NSKeys.EmployeeId))
-        print(userDefaults.objectForKey(NSKeys.IsLoggedIn))
+        userDefaults.setObject(true, forKey: NSKeys.IsLoggedIn)
+        if let employee_first_name = employee.first_name {
+            userDefaults.setObject(employee_first_name, forKey: NSKeys.FirstName)
+        }
+        if let employee_last_name = employee.last_name {
+            userDefaults.setObject(employee_last_name, forKey: NSKeys.LastName)
+        }
+        if let employee_job_title = employee.job_title {
+            userDefaults.setObject(employee_job_title, forKey: NSKeys.JobTitle)
+        }
+        if let employee_company_name = employee.company_name {
+            userDefaults.setObject(employee_company_name, forKey: NSKeys.CompanyName)
+        }
+        if let hours_per_week = employee.hours_per_week {
+            userDefaults.setObject(hours_per_week, forKey: NSKeys.HoursPerWeek)
+        }
+        if let wage_per_hour = employee.wage_per_hour {
+            userDefaults.setObject(wage_per_hour, forKey: NSKeys.WagePerHour)
+        }
+        if let notes = employee.notes {
+            userDefaults.setObject(notes, forKey: NSKeys.Notes)
+        }
     }
     
     class func saveAddresses(addresses addresses: [String]) {
@@ -59,25 +87,7 @@ class UserSettingsHandler {
         print(userDefaults.objectForKey(NSKeys.Addresses))
     }
     
-    class func didSaveAddressesAndDetails() -> Bool {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        if userDefaults.objectForKey(NSKeys.Username) != nil {
-            if userDefaults.objectForKey(NSKeys.Password) != nil {
-                if userDefaults.objectForKey(NSKeys.EmployerId) != nil {
-                    if userDefaults.objectForKey(NSKeys.EmployeeId) != nil {
-                        if userDefaults.objectForKey(NSKeys.IsLoggedIn) != nil {
-                            if userDefaults.objectForKey(NSKeys.Addresses) != nil {
-                                return true
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        return false
-    }
-    
-    class func clear() {
+    private class func clear() {
         for key in Array(NSUserDefaults.standardUserDefaults().dictionaryRepresentation().keys) {
             NSUserDefaults.standardUserDefaults().removeObjectForKey(key)
         }

@@ -27,9 +27,6 @@ class TextViewBaseCell: UITableViewCell, UITextViewDelegate {
         self.informationEnterTextView.font = UIFont(name: "HelveticaNeue", size: 17.0)
         self.informationEnterTextView.delegate = self
         self.informationEnterTextView.textColor = UIColor.lightGrayColor()
-       /* self.informationEnterTextView.layer.borderWidth = 1.0
-        self.informationEnterTextView.layer.borderColor = UIColor.lightGrayColor().CGColor
-        self.informationEnterTextView.layer.cornerRadius = 8.0*/
         self.contentView.addSubview(informationEnterTextView)
     }
     

@@ -74,7 +74,7 @@ class FrontPageViewController: BaseViewController {
                 }, wrongLoginHandler: {
                     [unowned self] in
                     self.passwordLabel.text = "";
-                    UserSettingsHandler.clear()
+                    UserSettingsHandler.logout()
                     self.removeActivityIndicator()
                     let alert = UIAlertController(title: "Login Failed", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "Try again", style: UIAlertActionStyle.Default, handler: nil))

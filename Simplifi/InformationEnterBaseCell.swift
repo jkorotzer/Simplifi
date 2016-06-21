@@ -15,7 +15,6 @@ protocol InformationTableViewCellTableView {
 }
 
 class InformationEnterBaseCell: UITableViewCell, UITextFieldDelegate {
-    
     let textfield = UITextField()
     
     var delegate: InformationTableViewCellTableView?

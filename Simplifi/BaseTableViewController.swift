@@ -16,6 +16,7 @@ class BaseTableViewController: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
     }
 
     // MARK: - Table view data source

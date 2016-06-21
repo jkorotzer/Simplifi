@@ -26,7 +26,6 @@ class EmployerSignUpTableViewController: BaseTableViewController, InformationTab
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "save", style: .Plain, target: self, action: #selector(EmployerSignUpTableViewController.save))
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "cancel", style: .Plain, target: self, action: #selector(EmployerSignUpTableViewController.cancel))
         self.title = "Welcome"
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
     }
 
     override func didReceiveMemoryWarning() {
@@ -81,13 +80,6 @@ class EmployerSignUpTableViewController: BaseTableViewController, InformationTab
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Welcome to Simplifi!"
     }
-
-    // MARK: - Navigation
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-    }
-
     
     func save(sender: AnyObject) {
         self.view.endEditing(true)

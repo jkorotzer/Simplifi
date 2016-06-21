@@ -41,7 +41,7 @@ class EmployerIdViewController: BaseViewController {
         if let string = employerIdTextField.text {
             if let num = Int(string) {
                 self.displayActivityIndicator("Signing up", true)
-                let employee = Employee(employer_id: num, name: username, password: password)
+                let employee = Employee(employer_id: num, name: username, password: password, id: 1)
                 EmployeeService.signUp(employee, employeeCompletionHandler: {[unowned self]
                     (employee, addresses) in
                         UserSettingsHandler.signUpAndLogin(employee: employee)
