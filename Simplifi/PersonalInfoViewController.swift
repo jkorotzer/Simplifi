@@ -24,7 +24,6 @@ class PersonalInfoViewController: BaseTableViewController, InformationTableViewC
                 self.removeActivityIndicator()
                 self.finishedLoading = true
                 dispatch_async(dispatch_get_main_queue(), {
-                    print(employee)
                     self.tableView.reloadData()
                 })
             }) { 

@@ -73,8 +73,9 @@ class TextViewBaseCell: UITableViewCell, UITextViewDelegate {
         if textView.text == "" {
             textView.text = placeholder
             textView.textColor = UIColor.lightGrayColor()
+        } else {
+            delegate?.textViewTextDidChange(self)
         }
-        delegate?.textViewTextDidChange(self)
         textView.resignFirstResponder()
     }
     

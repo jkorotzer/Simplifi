@@ -1,8 +1,8 @@
 //
 //  EmployerService.swift
-//  payCheck
+//  Simplifi
 //
-//  Created by Andrew Moeckel on 3/21/16.
+//  Created by Jared Korotzer on 3/21/16.
 //  Copyright © 2016 Jared. All rights reserved.
 //
 

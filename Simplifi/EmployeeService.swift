@@ -1,9 +1,9 @@
 //
 //  EmployeeService.swift
-//  Temp
+//  Simplifi
 //
-//  Created by Andrew Moeckel on 3/14/16.
-//  Copyright © 2016 payCheck. All rights reserved.
+//  Created by Jared Korotzer on 3/14/16.
+//  Copyright © 2016 Simplifi. All rights reserved.
 //
 
 import Foundation
@@ -51,23 +51,7 @@ class EmployeeService {
             case .Success(let data):
                 let json = JSON(data)
                 let employee = Employee(json: json)
-//                let employee = Employee(employer_id: json["employer_id"].int!, name: json["name"].string!, password: json["password_digest"].string!, id: json["id"].int!)
                 completionHandler(employee as Employee)
-//                let first_name = json["first_name"].string ?? ""
-//                let last_name = json["last_name"].string ?? ""
-//                let job_title = json["job_title"].string ?? ""
-//                let company_name = json["company_name"].string ?? ""
-//                let hours_per_week = Double(json["hours_per_week"].string!) ?? 0.0
-//                let wage_per_hour = Double(json["wage_per_hour"].string!) ?? 0.0
-//                let notes = json["notes"].string ?? ""
-//                print(notes)
-//                employee.first_name = first_name
-//                employee.last_name = last_name
-//                employee.job_title = job_title
-//                employee.company_name = company_name
-//                employee.hours_per_week = hours_per_week
-//                employee.wage_per_hour = wage_per_hour
-//                employee.notes = notes
                 UserSettingsHandler.saveEmployee(employee: employee)
         case .Failure(let error):
                 failureCompletionHandler()
@@ -136,18 +120,6 @@ class EmployeeService {
                 let id = json["id"]
                 if id.error == nil {
                     let e = Employee(json: json)
-//                    let employer_id = json["employer_id"].int!
-//                    let name = json["name"].string!
-//                    let password = json["password_digest"].string!
-//                    let e : Employee = Employee(employer_id: employer_id, name: name, password: password, id: json["id"].int!)
-//                    e.id = json["id"].int!
-//                    e.first_name = json["first_name"].string
-//                    e.last_name = json["last_name"].string
-//                    e.job_title = json["job_title"].string
-//                    e.company_name = json["company_name"].string
-//                    e.hours_per_week = json["hours_per_week"].double
-//                    e.wage_per_hour = json["wage_per_hour"].double
-//                    e.notes = json["notes"].string
                     completionHandler(e as Employee)
                 } else {
                     error_handler()
@@ -170,18 +142,6 @@ class EmployeeService {
                     let id = json["employee"]["id"]
                     if id.error == nil {
                         let e = Employee(json: json)
-//                        let employer_id = json["employee"]["employer_id"].int!
-//                        let name = json["employee"]["name"].string!
-//                        let password = json["employee"]["password_digest"].string!
-//                        let e : Employee = Employee(employer_id: employer_id, name: name, password: password, id: json["employee"]["id"].int!)
-//                        e.id = json["employee"]["id"].int!
-//                        e.first_name = json["employee"]["first_name"].string
-//                        e.last_name = json["employee"]["last_name"].string
-//                        e.job_title = json["employee"]["job_title"].string
-//                        e.company_name = json["employee"]["company_name"].string
-//                        e.hours_per_week = json["employee"]["hours_per_week"].double
-//                        e.wage_per_hour = json["employee"]["wage_per_hour"].double
-//                        e.notes = json["employee"]["notes"].string
                         var addresses = [String]()
                         for index in 0 ..< json["addresses"].count {
                             addresses.append(json["addresses"][index]["address"].string!)

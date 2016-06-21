@@ -1,9 +1,9 @@
 //
 //  Employee.swift
-//  Temp
+//  Simplifi
 //
-//  Created by Andrew Moeckel on 3/14/16.
-//  Copyright © 2016 payCheck. All rights reserved.
+//  Created by Jared Korotzer on 3/14/16.
+//  Copyright © 2016 Simplifi. All rights reserved.
 //
 
 import Foundation
